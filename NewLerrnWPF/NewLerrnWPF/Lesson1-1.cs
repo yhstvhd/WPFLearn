@@ -1,5 +1,5 @@
 ﻿/*
- * SharpDevelopによって生成
+ * http://ufcpp.net/study/csharp/st_comment.html
  * 日付: 2017/09/20
  * 時刻: 22:31
  * 
@@ -31,5 +31,35 @@ class Lesson1_1
 		double mean; //平均値
 		double variance; //分散
 		
+		//コメントは関数の上にあればいいというのが理想
+		//dataSourceの平均を求める
+		CalcMean(detaSource, out mean , out variance);
+		
+		Console.WriteLine("平均：{0}, 分散：{1}", mean ,variance);
+		Console.ReadKey();
+	}
+	
+	/// <summary>
+	/// 配列に入ったデータの平均値と分散を求める
+	/// <param name="data">与えられたデータ列</param>
+	/// <param name="mean">dataの平均値(出力)</param>
+	/// <param name="variance">dataの分散(出力)</param>
+	/// </summary>
+
+	static void CalcMean(int[] data, out double mean, out double variance)
+	{
+		int sum = 0; 
+		int sq_sum = 0; //二乗の合計
+		
+		//データ列の合計と二乗の合計を求める
+		foreach(int n in data)
+		{
+			sum += n;
+			sq_sum += n*n;
+		}
+		
+		//平均と分散を計算
+		mean = (double)sum / data.Length;
+		variance = (double)sq_sum / data.Length - mean*mean;
 	}
 }
