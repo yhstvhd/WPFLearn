@@ -46,6 +46,8 @@ class Lesson1_1
 	/// <param name="variance">dataの分散(出力)</param>
 	/// </summary>
 
+	
+	//out return文では戻り値が一つだけど、out使えばいくらでも戻り値が出来る
 	static void CalcMean(int[] data, out double mean, out double variance)
 	{
 		int sum = 0; 
